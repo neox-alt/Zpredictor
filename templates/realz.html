@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+     <div class="wrapper">
+         <div class="headline">
+             <h1>Thank you..!!!</h1>
+         </br>
+         <h1>ADD YOUR REAL Z SCORE HERE</h1>
+         </div>
+         <form action="{{ url_for('realzz')}}"method="post">
+            <div class="signup">
+                <div class="form-group">
+                    <input type="text" placeholder="Add Your Z score Here" name="Zscore" required="">
+                </div>
+
+                <div class="button">
+                    <div class="form-group">
+                        <input type="submit" name="signup_submit" value="ADD" />
+                    </div>
+                </div>
+
+      
+</body>
+</html>

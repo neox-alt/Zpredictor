@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ML API</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/marks.css') }}">
+</head>
+
+<body>
+  <div class="testbox">
+    <form action="{{ url_for('predict')}}" method="post">
+      <div class="banner">
+        <h1>Predict your Z-Score</h1>
+      </div>
+      <br />
+      <fieldset>
+        <legend>Mock Exam Marks</legend>
+        <div class="columns">
+          <div class="item">
+            <label for="math_1">Mathematics 1<span>*</span></label>
+            <input id="math_1" type="number" min="0" max="100" name="math_1" required="required" />
+          </div>
+          <div class="item">
+            <label for="math_2">Mathematics 2<span>*</span></label>
+            <input id="math_2" type="number" min="0" max="100" name="math_2" required="required" />
+          </div>
+          <div class="item">
+            <label for="math_3">Mathematics 3<span>*</span></label>
+            <input id="math_3" type="number" min="0" max="100" name="math_3" required="required" />
+          </div>
+          <div class="item">
+            <label for="phy_1">Physics 1<span>*</span></label>
+            <input id="phy_1" type="number" min="0" max="100" name="phy_1" required="required" />
+          </div>
+          <div class="item">
+            <label for="phy_2">Physics 2<span>*</span></label>
+            <input id="phy_2" type="number" min="0" max="100" name="phy_2" required="required" />
+          </div>
+          <div class="item">
+            <label for="phy_3">Physics 3<span>*</span></label>
+            <input id="phy_3" type="number" min="0" max="100" name="phy_3" required="required" />
+          </div>
+          <div class="item">
+            <label for="chem_1">Chemistry 1<span>*</span></label>
+            <input id="chem_1" type="number" min="0" max="100" name="chem_1" required="required" />
+          </div>
+          <div class="item">
+            <label for="chem_2">Chemistry 2<span>*</span></label>
+            <input id="chem_2" type="number" min="0" max="100" name="chem_2" required="required" />
+          </div>
+          <div class="item">
+            <label for="chem_3">Chemistry 3<span>*</span></label>
+            <input id="chem_3" type="number" min="0" max="100" name="chem_3" required="required" />
+          </div>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>Other Details</legend>
+        <div class="columns">
+          <div class="item">
+            <p>Gender </p>
+            <select name="gender" id="gender">
+              <option value="1">male</option>
+              <option value="0">female</option>
+            </select>
+          </div>
+          <div class="item">
+            <label for="sleeping_hours">Sleeping Hours (Per Day)<span>*</span></label>
+            <input id="sleeping_hours" type="number" min="0" max="24" name="sleeping_hours" required="required" />
+          </div>
+          <div class="item">
+            <label for="distance_to_school (kms)">Distance to school(km)<span>*</span></label>
+            <input id="distance_to_school (kms)" type="text" name="distance_to_school (kms)" required="required" />
+          </div>
+          <div class="item">
+            <p>School Type </p>
+            <select name="school_type" id="school_type">
+              <option value="1">Goverment school</option>
+              <option value="0">International school</option>
+            </select>
+          </div>
+          <div class="item">
+            <label for="income(Rs)">Income(Rs)<span>*</span></label>
+            <input id="income(Rs)" type="text" name="income(Rs)" required="required" />
+          </div>
+      </fieldset>
+      <div class="btn-block">
+        <button type="submit">Predict</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

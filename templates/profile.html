@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Profile</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+  <!-- Font Awesome CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+
+<body>
+  <div class="about-section">
+    <h1>Welcome to your profile!!</h1>
+    <p>We will predict your Z-Score</p>
+    <p>WISH YOU ALL THE VERY BEST!</p>
+  </div>
+
+  <ul>
+    <li><a href=out>LOGOUT</a></li>
+    <li><a href=marks>PREDICT Z-Score</a></li>
+    <li><a href=realz>INSERT Z-Score</a></li>
+  </ul>
+
+  <div class="student-profile py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent text-center">
+              <img class="profile_img" src="{{ url_for('static', filename='css/profile.png') }}" alt="student dp">
+              {% for item in data%}
+              <h3>{{item.username}}</h3>
+              {% endfor %}
+            </div>
+            <div class="card-body">
+              {% for item in data%}
+              <p class="mb-0"><strong class="pr-1">Student Email:</strong>{{item.usermail}}</p>
+              <br>
+              <p class="mb-0"><strong class="pr-1">Student Password:</strong>{{item.userpass}}</p>
+              <br>
+              <p class="mb-0"><strong class="pr-1">Student Z-Score:</strong>{{item.RealZ}}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Mock Exam Marks</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th>Exam</th>
+                  <th>Exam1</th>
+                  <th>Exam2</th>
+                  <th>Exam3</th>
+                </tr>
+                {% for item in data%}
+                <tr>
+                  <th>Mathematics</th>
+                  <td>{{item.m1}}</td>
+                  <td>{{item.m2}}</td>
+                  <td>{{item.m3}}</td>
+                </tr>
+
+                <tr>
+                  <th>Physics</th>
+                  <td>{{item.p1}}</td>
+                  <td>{{item.p2}}</td>
+                  <td>{{item.p3}}</td>
+                </tr>
+                <tr>
+                  <th>Chemistry</th>
+                  <td>{{item.c1}}</td>
+                  <td>{{item.c2}}</td>
+                  <td>{{item.c3}}</td>
+                </tr>
+                {% endfor %}
+
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
